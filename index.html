@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Events Discovery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>📍 Local Events</h1>
+        <p>Discover what's happening in your area</p>
+    </header>
+
+    <main>
+        <!-- Filter Section -->
+        <section class="filters">
+            <input type="text" id="searchInput" placeholder="Search events...">
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="music">Music</option>
+                <option value="food">Food & Drink</option>
+                <option value="sports">Sports</option>
+                <option value="arts">Arts & Culture</option>
+                <option value="community">Community</option>
+            </select>
+            <button id="showPastEvents">Show Past Events</button>
+        </section>
+
+        <!-- Events Grid -->
+        <section class="events-grid" id="eventsContainer">
+            <!-- Events will be loaded here by JavaScript -->
+            <div class="loading">Loading events...</div>
+        </section>
+
+        <!-- Add Event Button -->
+        <button class="add-event-btn" id="addEventBtn">+ Add Event</button>
+    </main>
+
+    <!-- Add Event Modal -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <h2>Add New Event</h2>
+            <form id="eventForm">
+                <input type="text" id="eventTitle" placeholder="Event Title" required>
+                <textarea id="eventDescription" placeholder="Event Description"></textarea>
+                <input type="date" id="eventDate" required>
+                <input type="time" id="eventTime" required>
+                <input type="text" id="eventLocation" placeholder="Location" required>
+                <select id="eventCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="music">Music</option>
+                    <option value="food">Food & Drink</option>
+                    <option value="sports">Sports</option>
+                    <option value="arts">Arts & Culture</option>
+                    <option value="community">Community</option>
+                </select>
+                <input type="text" id="eventImage" placeholder="Image URL (optional)">
+                <div class="form-buttons">
+                    <button type="submit">Add Event</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
